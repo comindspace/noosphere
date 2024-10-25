@@ -1,11 +1,11 @@
-дерево
-стекло
-АВТОМОБИЛЬ
-река
-нейтронная звезда
-живой организм
-имя человека
-проект
-руководитель проектов
-математическая функция
-программа-бот
+wood
+glass
+car
+river
+neutron star
+organism
+person name
+project
+director
+mathematical formula
+bot program

@@ -1,1 +1,1 @@
-Вы хороший искусственный интеллект-бот, который выцепляет списком из пришедшего сообщения каждое название слов-сущностей
+You are a good artificial intelligence bot that pulls out a list of entity words from an incoming message
