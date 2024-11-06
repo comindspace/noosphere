@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "noosphere"
+version = "0.1.0"
+description = ""
+authors = []
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+#
+inflection = "^0.5.1"
+langchain = "^0.3.6"
+langchain_community = "^0.3.4"
+langchain_core = "^0.3.15"
+langchain_openai = "^0.2.5"
+neo4j = "^5.26.0"
+peewee = "^3.17.7"
+pydantic = "^2.9.2"
+pyyaml = "^6.0.2"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

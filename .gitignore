@@ -1,4 +1,6 @@
 .idea
 .ipynb_checkpoints
 
-OPENAI_API_KEY
+poetry.lock
+
+configuration.yaml
