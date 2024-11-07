@@ -8,15 +8,16 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
-#
+faiss-cpu = "^1.9.0"
 inflection = "^0.5.1"
-langchain = "^0.3.6"
-langchain_community = "^0.3.4"
-langchain_core = "^0.3.15"
-langchain_openai = "^0.2.5"
+langchain = "^0.3.7"
+langchain-community = "^0.3.5"
+langchain-openai = "^0.2.6"
 neo4j = "^5.26.0"
 peewee = "^3.17.7"
 pydantic = "^2.9.2"
+python-dotenv = "^1.0.1"
+python-string-utils = "^1.0.0"
 pyyaml = "^6.0.2"
 
 [tool.poetry.group.test.dependencies]

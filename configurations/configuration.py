@@ -1,8 +1,7 @@
 import yaml
 from inflection import *
 from pydantic import BaseModel
-
-from package.utilities import is_blank
+from string_utils import is_full_string
 
 class Configuration(BaseModel):
     @classmethod
@@ -10,10 +9,10 @@ class Configuration(BaseModel):
         if key is None:
             return cls(**(configuration[underscore(cls.__name__.rstrip('Configuration'))]))
         else:
-            if is_blank(key):
-                return cls(**configuration)
-            else:
+            if is_full_string(key):
                 return cls(**configuration[key])
+            else:
+                return cls(**configuration)
 
     @staticmethod
     def load(filepath: str) -> dict:
