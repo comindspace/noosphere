@@ -1,6 +1,6 @@
 from typing import Dict
 
-from configurations.configuration import *
+from configuration import Configuration
 
 class OpenAIEmbeddingsConfiguration(Configuration):
     model: str

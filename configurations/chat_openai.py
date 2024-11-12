@@ -1,4 +1,4 @@
-from configurations.configuration import *
+from configuration import Configuration
 
 class ChatOpenAIConfiguration(Configuration):
     model: str

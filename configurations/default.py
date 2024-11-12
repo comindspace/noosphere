@@ -1,4 +1,4 @@
-from configurations.configuration import *
+from configuration import Configuration
 
 class DefaultConfiguration(Configuration):
     openai_api_key: str
