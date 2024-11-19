@@ -1,4 +1,4 @@
-from configuration import Configuration
+from .configuration import Configuration
 
 class CypherChatOpenAIConfiguration(Configuration):
     model: str
