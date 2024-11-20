@@ -9,11 +9,16 @@ class SRO:
     object: str
 
     def is_full(self) -> bool:
-        return is_full_string(self.subject) and is_full_string(self.relation) and is_full_string(self.object)
+        return (is_full_string(self.subject)
+                and is_full_string(self.relation)
+                and is_full_string(self.object))
 
     @staticmethod
     def replace(string: str, prefix: str) -> str:
-        return string.lstrip('0123456789.- ').removeprefix(f"{prefix}:").strip().replace("\'", "\\'")
+        return (string.lstrip('0123456789.- ')
+                .removeprefix(f"{prefix}:")
+                .strip()
+                .replace("\'", "\\'"))
 
     def __init__(self, string: str):
         strings = string.splitlines()

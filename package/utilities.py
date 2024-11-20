@@ -1,8 +1,8 @@
-from typing import Generator
+from typing import Generator, LiteralString
 
 from langchain_core.documents.base import Document
 
-def get_file_contents(name: str) -> str:
+def get_file_contents(name: str) -> str | None:
     """
     Given a name of the file, return the contents of that file.
     """
@@ -11,8 +11,9 @@ def get_file_contents(name: str) -> str:
         return f.read().strip()
     except FileNotFoundError:
         print("'%s' file not found" % name)
+        return None
 
-def removeprefixes(string: str, *words: list[str]) -> str:
+def removeprefixes(string: str, *words: str) -> str:
     for word in words:
         if len(s := string.removeprefix(word)) < len(string):
             return s
