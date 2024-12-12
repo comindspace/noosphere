@@ -1,11 +1,11 @@
-__pycache__/
+__pycache__
+index/
 .idea/
-.ipynb_checkpoints
-frames-benchmark/test.tsv
-frames-benchmark/*.parquet
+.venv/
 
-poetry.lock
 .env
 
-configuration.yaml
-frames-benchmark/imported_links.txt
+poetry.lock
+
+import/test.tsv
+*.parquet
