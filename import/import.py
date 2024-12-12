@@ -10,16 +10,16 @@ import pyarrow.compute as pc
 import pyarrow.parquet as pq
 from PIL.Image import MODES
 from dotenv import load_dotenv
-from redirected_links import redirected_links
 from neo4j import GraphDatabase
 from pyarrow import Table
 
 from frames_benchmark_record import FramesBenchmarkRecord
 from lightrag import LightRAG, QueryParam
+from lightrag.entity_relationship_content_keywords import extract_entity_types_async
 from lightrag.llm import ollama_model_complete, ollama_embedding
-from lightrag.prompt import PROMPTS
 from lightrag.utils import EmbeddingFunc
 from load_csv import load_csv
+from redirected_links import redirected_links
 
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
@@ -127,7 +127,7 @@ async def question_test_async(test: FramesBenchmarkRecord, table: Table):
               link,
               len(text))
         start_article = time()
-        entity_types = PROMPTS["DEFAULT_ENTITY_TYPES"]
+        entity_types = await extract_entity_types_async(OLLAMA_HOST, LLM_MODEL, text)
         print("\t", entity_types)
         question_entity_types.update(entity_types)
         await rag.ainsert(text, entity_types=entity_types)
