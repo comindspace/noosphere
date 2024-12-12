@@ -4,6 +4,8 @@ import re
 from typing import Union
 from collections import Counter, defaultdict
 import warnings
+
+from .entity_relationship_content_keywords import EntitiesRelationshipsContentKeywords
 from .utils import (
     logger,
     clean_str,
@@ -274,7 +276,9 @@ async def extract_entities(
 
         history = pack_user_ass_to_openai_messages(hint_prompt, final_result)
         for now_glean_index in range(entity_extract_max_gleaning):
-            glean_result = await use_llm_func(continue_prompt, history_messages=history)
+            pre_glean_result = EntitiesRelationshipsContentKeywords.parse(await use_llm_func(continue_prompt, history_messages=history))
+            await pre_glean_result.merge_entity_types_async()
+            glean_result = pre_glean_result.to_text()
 
             history += pack_user_ass_to_openai_messages(continue_prompt, glean_result)
             final_result += glean_result
